@@ -1,0 +1,19 @@
+{
+  "name": "code-challenges",
+  "version": "1.0.0",
+  "description": "This repo is a collection of all the code challenges I have worked on.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slakeyj/code-challenges.git"
+  },
+  "author": "Susanna Lakey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slakeyj/code-challenges/issues"
+  },
+  "homepage": "https://github.com/slakeyj/code-challenges#readme"
+}
