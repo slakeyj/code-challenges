@@ -4,7 +4,8 @@
   "description": "This repo is a collection of all the code challenges I have worked on.",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "test:watch": "jest --verbose --watch"
   },
   "repository": {
     "type": "git",
