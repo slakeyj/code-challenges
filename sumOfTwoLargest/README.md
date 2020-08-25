@@ -1,0 +1,1 @@
+Return the sum of the 2 largest integers in an array.
