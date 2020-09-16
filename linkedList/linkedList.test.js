@@ -50,4 +50,27 @@ describe('LinkedList', () => {
       expect(newList.toString()).toEqual('{ 1 } -> { 2 } -> { 3 } -> { 4 } -> NULL')
     })
   })
+
+  describe('append', () => {
+    it('inserts a value at the end of the linked list', () => {
+      const node = new Node(4);
+      const newList = new LinkedList(node);
+      newList.insert(3);
+      newList.append(5);
+      // console.log('list', newList.head.next.next.value)
+      expect(newList.head.next.next.value).toEqual(5)
+    })
+
+  })
+
+  describe('insertBefore', () => {
+    it('inserts the new value before the given value', () => {
+      const node = new Node(4);
+      const newList = new LinkedList(node);
+      newList.insert(3)
+      newList.insert(1)
+      newList.insertBefore(3, 2)
+      expect(newList.head.next.value).toEqual(2);
+    })
+  })
 })
