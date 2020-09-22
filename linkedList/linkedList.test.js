@@ -40,7 +40,6 @@ describe('LinkedList', () => {
   })
 
   describe('toString', () => {
-    // It returns a string representing all the values that exist in a linked list formatted as "{ a } -> { b } -> { c } -> NULL"
     it('returns a string representing the linked list', () => {
       const node = new Node(4);
       const newList = new LinkedList(node);
@@ -73,4 +72,61 @@ describe('LinkedList', () => {
       expect(newList.head.next.value).toEqual(2);
     })
   })
+
+  describe('insertAfter', () => {
+    it('inserts the new value after the given value', () => {
+      const node = new Node(4);
+      const newList = new LinkedList(node);
+      newList.insert(3)
+      newList.insertAfter(4, 5);
+      expect(newList.head.next.next.value).toEqual(5);
+    })
+  })
+
+  describe('findKthValue', () => {
+
+    it('can return a value from the middle of the linked list', () => {
+      const linkedList = new LinkedList();
+      linkedList.insert(3);
+      linkedList.insert(2);
+      linkedList.insert(1);
+      console.log(linkedList)
+      expect(linkedList.findKthValue(0)).toEqual(3);
+      expect(linkedList.findKthValue(1)).toEqual(2);
+      expect(linkedList.findKthValue(2)).toEqual(1);
+    })
+    it('throws an exception when k is greater than the length of the linked list', () => {
+      const linkedList = new LinkedList();
+      linkedList.insert(3);
+      linkedList.insert(2);
+      linkedList.insert(1);
+      expect(() => { linkedList.findKthValue(5) }).toThrowError('Please enter a valid number');
+    })
+
+    it('returns the correct value when k and the length of the list are the same', () => {
+      const linkedList = new LinkedList();
+      linkedList.insert(3);
+      linkedList.insert(2);
+      linkedList.insert(1);
+      expect(linkedList.findKthValue(2)).toEqual(1);
+    })
+
+    it('throws an exception when k is a negative integer', () => {
+      const linkedList = new LinkedList();
+      linkedList.insert(3);
+      linkedList.insert(2);
+      linkedList.insert(1);
+      expect(() => { linkedList.findKthValue(-2) }).toThrow();
+    })
+
+    it('works with a linked list with a size of 1', () => {
+      const linkedList = new LinkedList();
+      linkedList.insert(3);
+      expect(linkedList.findKthValue(0)).toEqual(3);
+    })
+
+  })
+
+
+
 })
