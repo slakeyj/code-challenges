@@ -40,17 +40,18 @@ const reverse = integer => {
   }
   return 0;
 };
-// const reverse = x => {
-//   const rawDigits = [...`${x}`];
-//   const isNegative = rawDigits[0] === '-';
-//   const digits = isNegative ? rawDigits.slice(1) : rawDigits;
-//   const reversedDigits = digits.reverse();
-//   const rawValue = parseInt(reversedDigits.join(''));
-//   const value = isNegative ? rawValue * -1 : rawValue;
-//   if (value < low || value > high) {
-//     return 0;
-//   }
-//   return value;
-// };
 
-module.exports = reverse;
+const reverseAsString = x => {
+  const rawDigits = [...`${x}`];
+  const isNegative = rawDigits[0] === '-';
+  const digits = isNegative ? rawDigits.slice(1) : rawDigits;
+  const reversedDigits = digits.reverse();
+  const rawValue = parseInt(reversedDigits.join(''));
+  const value = isNegative ? rawValue * -1 : rawValue;
+  if (value < low || value > high) {
+    return 0;
+  }
+  return value;
+};
+
+module.exports = { reverse, reverseAsString };
