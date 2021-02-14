@@ -9,3 +9,4 @@
 - insertBefore: takes in a value and new value.  Inserts the new value before the given value
 - insertAfter: takes in a value and new value. Inserts the new value after the given value.
 - findKthValue: takes in value k, and, starting from the end of the linked list, finds that place in the linked list and returns the value
+- removeNthFromEnd: Given the head of a linked list, remove the nth node from the end of the list and return its head.
