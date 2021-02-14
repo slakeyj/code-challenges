@@ -1,10 +1,9 @@
 class Node {
-  constructor(value) {
+  constructor(value, next = null) {
     this.value = value;
-    this.next = null;
+    this.next = next;
   }
 }
-
 
 class LinkedList {
   constructor(head = null) {
@@ -28,15 +27,14 @@ class LinkedList {
     return false;
   }
 
-
   toString() {
     let current = this.head;
     let linkedListString = '';
     while (current) {
-      linkedListString += `{ ${current.value.toString()} } -> `
+      linkedListString += `{ ${current.value.toString()} } -> `;
       current = current.next;
     }
-    linkedListString += 'NULL'
+    linkedListString += 'NULL';
     return linkedListString;
   }
 
@@ -47,7 +45,7 @@ class LinkedList {
     }
     let current = this.head;
     while (current.next) {
-      current = current.next
+      current = current.next;
     }
     current.next = new Node(number);
   }
@@ -84,14 +82,13 @@ class LinkedList {
     let nodeValues = [];
     // takes in value k, and, starting from the end of the linked list, finds that place in the linked list and returns the value
     while (current) {
-      nodeValues.unshift(current.value)
+      nodeValues.unshift(current.value);
       current = current.next;
     }
     if (k > nodeValues.length || k < 0) {
       throw 'Please enter a valid number';
     }
     return nodeValues[k];
-
   }
 }
 
