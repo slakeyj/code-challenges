@@ -22,13 +22,6 @@ const countPrimes = n => {
   // }
   // return primeCount;
 
-  // using sieve of eratosthenes
-  // starting at square of 2 (4), elminate all multiples of 2
-  // starting at square of 3, elminiate all multiples of 3
-  // and so on, until you reach the end and only have primes left
-  // add all non-primes to set
-  // check as we go if
-
   if (n < 2) {
     return 0;
   }
