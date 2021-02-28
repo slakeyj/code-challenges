@@ -27,15 +27,14 @@ const countPrimes = n => {
   }
 
   const nonPrimeSet = new Set();
-  nonPrimeSet.add(1, 2);
+  nonPrimeSet.add(1);
+  nonPrimeSet.add(2);
   for (let i = 2; i < n / 2; i++) {
     for (let j = Math.pow(i, 2); j < n; j += i) {
-      if (!nonPrimeSet.has(j)) {
-        nonPrimeSet.add(j);
-      }
+      nonPrimeSet.add(j);
     }
   }
-  return n - nonPrimeSet.size - 1;
+  return n - nonPrimeSet.size;
 };
 
 module.exports = countPrimes;
